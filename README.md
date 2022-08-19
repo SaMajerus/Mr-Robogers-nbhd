@@ -26,9 +26,14 @@ Expected Output:  "0,BEEP!"
 
 Describe:  substituteNums() 
 
-Test:  "It must return an array modified from the original, with the string-substitution (a.k.a. 'string-sub') for '1' applied to that index only." 
+Test:  "It must return an array modified from the original, with the string-substitution (a.k.a. 'string-sub') for '1' applied to that array index only." 
 Code: 
 const x = [0, 1]; 
 substituteNums(x); 
 Expected Output:  [0, "BEEP!"]  
 
+Test:  "It must return an array modified from the original, with the string-subs for '1', '2' and '3' applied to their respective array indices only." 
+Code: 
+const x = [0, 1, 2, 3, 4]; 
+substituteNums(x); 
+Expected Output:  [0, "BEEP!", "BOOP!", "Won't you be my neighbor?", 4] 
