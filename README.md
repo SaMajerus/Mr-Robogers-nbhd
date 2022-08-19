@@ -43,3 +43,11 @@ Code:
 const x = [0, 1, 2, 3, 4]; 
 substituteNums(x); 
 Expected Output:  [0, "BEEP!", "BOOP!", "Won't you be my neighbor?", 4] 
+
+Test:  "(Ditto above.)  If console displays the first and second digits of the 2-digit number before the returned array-output, this test is successful." 
+Code: 
+const x = [0, 1, 2, 3, 4, 12]; 
+substituteNums(x); 
+Expected Output:  "d1 of '12' is:  1"
+"d2 of '12' is:  2" 
+[0, "BEEP!", "BOOP!", "Won't you be my neighbor?", 4, 12] 
