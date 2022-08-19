@@ -54,8 +54,8 @@ Expected Output:  "d1 of '12' is:  1"
 
 Test:  "Must properly apply String-subs to the two-digit numbers (as laid out by the 'Hierarchy of Substitutions' in the project prompt)." 
 Code: 
-const x = [1, 2, 3, 4, 5, 10, 11, 12, 13, 14, 20, 21, 22, 23, 24, 30, 31, 32, 33, 34]; 
-substituteNums(x); 
+const x = [0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 14, 20, 21, 22, 23, 24, 30, 31, 32, 33, 34]; 
+substituteNums(x);  
 Expected Output:  
-[0, "BEEP!", "BOOP!", "Won't you be my neighbor?", 4, 5, "BEEP!", "BEEP!", "BOOP!", "Won't you be my neighbor?", 14, "BOOP!", "BOOP!", "BOOP!", "Won't you be my neighbor?", 24, "Won't you be my neighbor?", "Won't you be my neighbor?", "Won't you be my neighbor?", "Won't you be my neighbor?", 34] 
-Actual (this iteration -- including for this commit only): ['1', '2', '3', '4', '5', 'BEEP!', 'BEEP!', 'BOOP!', "Won't you be my neighbor?", 'BEEP!', 'BOOP!', 'BOOP!', 'BOOP!', "Won't you be my neighbor?", 'BOOP!', "Won't you be my neighbor?", "Won't you be my neighbor?", "Won't you be my neighbor?", "Won't you be my neighbor?", "Won't you be my neighbor?"] 
+[0, "BEEP!", "BOOP!", "Won't you be my neighbor?", 4, 5, "BEEP!", "BEEP!", "BOOP!", "Won't you be my neighbor?", "BEEP!", "BOOP!", "BOOP!", "BOOP!", "Won't you be my neighbor?", "BOOP!", "Won't you be my neighbor?", "Won't you be my neighbor?", "Won't you be my neighbor?", "Won't you be my neighbor?", "Won't you be my neighbor?"] 
+

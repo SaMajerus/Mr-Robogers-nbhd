@@ -26,44 +26,31 @@ function substituteNums(currArr) {   //Substitutes numbers containing digits '1'
   const sub2 = "BOOP!"; 
   const sub3 = "Won't you be my neighbor?";  
 
-
-  //console.log(currArr); 
+  console.log(currArr); 
 
   for (let index = 0; index < currArr.length; index += 1) { 
     let curr = String(currArr[index]);  //Casts current element as a String, saves it to 'curr'.  [Need to do this to be able to check its length, look for certain digits that comprise it, etc.] 
 
-    console.log("Length of '" + curr + "' is:  " + curr.length);
+    //console.log("Length of '" + curr + "' is:  " + curr.length);
 
-    if(curr.length === 1) { 
-      if(curr === 1) { 
-        newArr.push(sub1); 
-      } else if (curr === 2) { 
-        newArr.push(sub2); 
-      } else if (curr === 3) { 
-        newArr.push(sub3); 
-      } else { 
-        newArr.push(curr); 
-      } 
-    } else if(curr.length >= 2) {  //If number has 2 or more digits 
-      /*The logic below will do the following:
-      First, it'll check if '3' is in one or more of the given number's digits. If so, that String-sub gets applied.     
-      Otherwise, the same logic is applied for '2',   as well as for '1' if it turns out no '2' is present. 
-      Finally, if the logic comes up negative for all three, then the given number therefore does not contain any digits with a '1', '2', '3' (or any combination), so the given number gets pushed to 'newArr' the main for-loop continues to the next element. 
+    /*The logic below will do the following:
+    First, it'll check if '3' is in one or more of the given number's digits. If so, that String-sub gets applied.     
+    Otherwise, the same logic is applied for '2',   as well as for '1' if it turns out no '2' is present. 
+    Finally, if the logic comes up negative for all three, then the given number therefore does not contain any digits with a '1', '2', '3' (or any combination), so the given number gets pushed to 'newArr' the main for-loop continues to the next element. 
+    This logic ultimately applies for all numbers with [1] or more digits, and therefore means that it'll work for however many digits the Number data-type can handle before hitting a maximum (assuming that JS has one). The downside, of course, is that the more digits the user inputs, the greater the amount of time the process will take (and with that corresponding increase of time, the likelihood of something like a Memory Leak occurring, for example, also increases.) 
+    -SM, 8/19/2022, 1:46pm PDT.  [Edited at 2:41pm PDT by me (SM), same day.] 
+    */ 
 
-      This logic ultimately applies for all numbers with 2 or more digits, and therefore means that it'll work for however many digits the Number data-type can handle before hitting a maximum (assuming that JS has one). The downside, of course, is that the more digits the user inputs, the greater the amount of time the process will take (and with that corresponding increase of time, the likelihood of something like a Memory Leak occurring, for example, also increases.) 
-      -SM, 8/19/2022, 1:46pm PDT. 
-      */ 
-
-      if (curr.includes(3)) {  //Checking by 'order of importance'.  (3=Most important, 2=second-most, 1=third-most).   
-        newArr.push(sub3); 
-      } else if (curr.includes(2)) {
-        newArr.push(sub2); 
-      } else if (curr.includes(1)) {
-        newArr.push(sub1); 
-      } else {
-        newArr.push(curr); 
-      }
-    } 
+    
+    if (curr.includes(3)) {  //Checking by 'order of importance'.  (3=Most important, 2=second-most, 1=third-most).   
+      newArr.push(sub3); 
+    } else if (curr.includes(2)) {
+      newArr.push(sub2); 
+    } else if (curr.includes(1)) {
+      newArr.push(sub1); 
+    } else {
+      newArr.push(curr); 
+    }
   } 
   //console.log("Final form of 'newArr': " + newArr); 
   return newArr; 
@@ -78,7 +65,7 @@ function handleSubmission(){
 
 }
 
-window.addEventListener("load", function(event){ 
+window.addEventListener("load", function(event) { 
 
 }); 
 
