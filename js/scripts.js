@@ -13,7 +13,7 @@ function processNum (num) {
   retArr = substituteNums(numArr);  
  
   //retStr = String(retArr);
-  console.log(String(retArr)); 
+  //console.log(String(retArr)); 
   return String(retArr); 
 }  
 
@@ -60,7 +60,7 @@ function substituteNums(currArr) {   //Substitutes numbers containing digits '1'
 
 
 /*     UI Logic     */ 
-function handleSubmission(){
+function handleSubmission() {
   event.preventDefault; 
 
 }
