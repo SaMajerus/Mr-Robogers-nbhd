@@ -9,7 +9,7 @@ Expected Output:  -Insert expected output [that signifies a successful, passed t
 
 
 ## BUSINESS LOGIC 
-Describe:  processNums() 
+Describe:  processNum() 
 
 Test: "Function must detect the input, and print the resulting Array as a String."
 Code: 

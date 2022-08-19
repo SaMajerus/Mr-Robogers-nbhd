@@ -3,9 +3,8 @@
 function processNum (num) {
   let numArr = [];   //Initializes empty array
   let retArr = [];  //Initializes empty array (for 'retStr' to cast as a String before returning, at least for the first couple 'combined-arms function' tests.  Will end up casting the 'substituteNums' function call as a String and saving to retStr [as a one-liner].) 
-  let retStr = "";  //Initializes empty string return-value 
+  //let retStr = "";  //Initializes empty string return-value 
 
-  //
   for(let i=0; i < num+1; i+=1){   //Populates numArr.   Order in which values will be added: 0 to 'num' (inclusive). 
     numArr.push(i); 
   } 
@@ -16,7 +15,6 @@ function processNum (num) {
   //console.log(String(retArr)); 
   return String(retArr); 
 }  
-
 
 function substituteNums(currArr) {   //Substitutes numbers containing digits '1', '2', or '3' with corresponding String values.  [Input-parameter type: array] 
   let newArr = [];  //Initializing empty array which will store the modified version of 'currArr' that this function returns.
@@ -44,10 +42,13 @@ function substituteNums(currArr) {   //Substitutes numbers containing digits '1'
     
     if (curr.includes(3)) {  //Checking by 'order of importance'  [3 = Most (Important);  2 = 2nd-Most;  1 = 3rd-Most].   
       newArr.push(sub3); 
+
     } else if (curr.includes(2)) { 
       newArr.push(sub2); 
+
     } else if (curr.includes(1)) { 
       newArr.push(sub1); 
+
     } else { 
       newArr.push(curr); 
     }
@@ -60,14 +61,25 @@ function substituteNums(currArr) {   //Substitutes numbers containing digits '1'
 
 
 /*     UI Logic     */ 
-function handleSubmission() {
-  event.preventDefault; 
+window.onload = function() {
+  let form = document.getElementById("userIn");
+  form.onsubmit = function handleSubmission(event){  //Handles user input -- saves it, and passes it on to Business Logic (processNums) 
+    event.preventDefault();  //As we know, it prevents the 'onsubmit' function's default behavior from occurring (which would bypass everything that comes after 'onsubmit' and erase user input without the Business Logic having a chance to execute with any inputs). 
+  
+    let result; //Initializes variable that will save the output returned from 'processNums', and in turn, allow the webpage to display that output. 
 
+    const inputValue = parseInt(document.getElementById("inNum")); //Retrieves and saves user's entered number 
+
+    result = processNum(inputValue); 
+
+    //Displaying results on webpage 
+    document.getElementById("response-hdr").removeAttribute("hidden");  //Reveals 'h1' header
+    document.getElementById("robogrs-greet").removeAttribute("hidden");  //Reveals Robogers' initial greeting to the user. 
+    document.getElementById("robogrs-response").innerText = result;  //Prints the Business Logic's output for the user on the webpage
+  }
 }
 
-window.addEventListener("load", function(event) { 
-
+window.addEventListener("load", function() { 
+  const nbhd = document.getElementById("userIn"); 
+  nbhd.addEventListener("submit", handleSubmission); 
 }); 
-
-
-//Note-To-Self RE Error-check:  include a 'base-case' if-statment at the start of the submission handler where:  if the inputted number is longer than 4 digits, give the user an error -- or alert -- that tells them to try again with a number of   'length <= 4'   digits. 
