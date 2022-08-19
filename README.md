@@ -23,6 +23,12 @@ const x = 1;
 processNum(x); 
 Expected Output:  "0,BEEP!" 
 
+Test: "(Same as above)"   **(function is in its 'Test 2' configuration) 
+Code: 
+const x = 5; 
+processNum(x); 
+Expected Output:  "0,BEEP!,BOOP!,Won't you be my neighbor?,4,5" 
+
 
 Describe:  substituteNums() 
 
