@@ -14,7 +14,21 @@ function processNum (num) {
   return retStr; 
 }  
 
+function substituteNums(currArr) {  //Substitutes numbers that contain digits '1', '2' or '3' with corresponding String values.  [Input-parameter type: array] 
+  let newArr = []; 
+  console.log(currArr); 
+  console.log(newArr);
+  currArr.forEach(function(element) { 
+    if((element === 1) || (element.includes(1))) { 
+      newArr.push("BEEP!"); 
+    } else { 
+      newArr.push(element); 
+    } 
+  }); 
 
+  console.log(newArr); 
+  return newArr;
+}
 
 
 
