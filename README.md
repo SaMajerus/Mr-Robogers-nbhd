@@ -29,6 +29,12 @@ const x = 5;
 processNum(x); 
 Expected Output:  "0,BEEP!,BOOP!,Won't you be my neighbor?,4,5" 
 
+Test: "Function must detect the input, call 'substituteNums'**, and print the resulting Array as a String."   **(function is in its 'Test 4' configuration) 
+Code: 
+const x = 40; 
+processNum(x); 
+Expected Output:  "0,BEEP!,BOOP!,Won't you be my neighbor?,4,5,6,7,8,9,BEEP!,BEEP!,BOOP!,Won't you be my neighbor?,BEEP!,BEEP!,BEEP!,BEEP!,BEEP!,BEEP!,BOOP!,BOOP!,BOOP!,Won't you be my neighbor?,BOOP!,BOOP!,BOOP!,BOOP!,BOOP!,BOOP!,Won't you be my neighbor?,Won't you be my neighbor?,Won't you be my neighbor?,Won't you be my neighbor?,Won't you be my neighbor?,Won't you be my neighbor?,Won't you be my neighbor?,Won't you be my neighbor?,Won't you be my neighbor?,Won't you be my neighbor?,40" 
+
 
 Describe:  substituteNums() 
 

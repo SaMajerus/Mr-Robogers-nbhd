@@ -42,13 +42,13 @@ function substituteNums(currArr) {   //Substitutes numbers containing digits '1'
     */ 
 
     
-    if (curr.includes(3)) {  //Checking by 'order of importance'.  (3=Most important, 2=second-most, 1=third-most).   
+    if (curr.includes(3)) {  //Checking by 'order of importance'  [3 = Most (Important);  2 = 2nd-Most;  1 = 3rd-Most].   
       newArr.push(sub3); 
-    } else if (curr.includes(2)) {
+    } else if (curr.includes(2)) { 
       newArr.push(sub2); 
-    } else if (curr.includes(1)) {
+    } else if (curr.includes(1)) { 
       newArr.push(sub1); 
-    } else {
+    } else { 
       newArr.push(curr); 
     }
   } 
