@@ -24,17 +24,13 @@ function substituteNums(currArr) {   //Substitutes numbers containing digits '1'
   //Pre-defining substitutions for '1', '2', and '3' as constant-type variables. 
   const sub1 = "BEEP!"; 
   const sub2 = "BOOP!"; 
-  const sub3 = "Won't you be my neighbor?"; 
-
-  //  **Pre-defining constant- and nonconstant-vars for the case in which the given element's Length>1.  
-  let eNum = []; //Empty array variable that will store the 1st, 2nd, 3rd, and 4th digits, respectively, in separate indices. This will allow the logic to evaluate which String-sub to apply (if '1', '2', and/or '3' -- or a combination -- are present in the element) 
-  let eTemp = []; //Initializes temporary array. Saves the results of 'curr.trim("").split(" ")'  [see Line 62]. 
+  const sub3 = "Won't you be my neighbor?";  
 
 
   //console.log(currArr); 
 
   for (let index = 0; index < currArr.length; index += 1) { 
-    let curr = String(currArr[index]);  //Casts current element as a String, saves it to 'curr'.  [Need to do this in order to check a number's length, look for certain digits, etc.  (Also allows us to split digits -- see Line 62-71)] 
+    let curr = String(currArr[index]);  //Casts current element as a String, saves it to 'curr'.  [Need to do this to be able to check its length, look for certain digits that comprise it, etc.] 
 
     console.log("Length of '" + curr + "' is:  " + curr.length);
 
@@ -58,23 +54,17 @@ function substituteNums(currArr) {   //Substitutes numbers containing digits '1'
       -SM, 8/19/2022, 1:46pm PDT. 
       */ 
 
-      /*
-      eTemp = (curr.trim("")).split(""); 
-      console.log("Current contents of array 'eTemp' (for currArr element  '" + curr + "'):  " + eTemp); 
-      for (let i=0; i < eTemp.length; i+=1) {  //Copying contents from 'eTemp' to 'eNum' arrays. 
-        eNum.push(eTemp[i]); 
-      } 
-      console.log("Current contents of array 'eNum' (for currArr element  '" + curr + "'):  " + eNum);
-      //d1 = eNum[0]; 
-      console.log("d1 of '" + curr + "' is:  " + eNum[0]); 
-      //d2 = eNum[1]; 
-      console.log("d2 of '" + curr + "' is:  " + eNum[1]); 
-
-      newArr.push(curr);  //This is temporary;  ensures no errors get thrown while testing Lines 62-71. 
-      */
-    }
-
-  }
+      if (curr.includes(3)) {  //Checking by 'order of importance'.  (3=Most important, 2=second-most, 1=third-most).   
+        newArr.push(sub3); 
+      } else if (curr.includes(2)) {
+        newArr.push(sub2); 
+      } else if (curr.includes(1)) {
+        newArr.push(sub1); 
+      } else {
+        newArr.push(curr); 
+      }
+    } 
+  } 
   //console.log("Final form of 'newArr': " + newArr); 
   return newArr; 
 } 

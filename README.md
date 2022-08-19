@@ -58,3 +58,4 @@ const x = [1, 2, 3, 4, 5, 10, 11, 12, 13, 14, 20, 21, 22, 23, 24, 30, 31, 32, 33
 substituteNums(x); 
 Expected Output:  
 [0, "BEEP!", "BOOP!", "Won't you be my neighbor?", 4, 5, "BEEP!", "BEEP!", "BOOP!", "Won't you be my neighbor?", 14, "BOOP!", "BOOP!", "BOOP!", "Won't you be my neighbor?", 24, "Won't you be my neighbor?", "Won't you be my neighbor?", "Won't you be my neighbor?", "Won't you be my neighbor?", 34] 
+Actual (this iteration -- including for this commit only): ['1', '2', '3', '4', '5', 'BEEP!', 'BEEP!', 'BOOP!', "Won't you be my neighbor?", 'BEEP!', 'BOOP!', 'BOOP!', 'BOOP!', "Won't you be my neighbor?", 'BOOP!', "Won't you be my neighbor?", "Won't you be my neighbor?", "Won't you be my neighbor?", "Won't you be my neighbor?", "Won't you be my neighbor?"] 
